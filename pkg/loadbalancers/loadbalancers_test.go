@@ -71,7 +71,7 @@ func newMockMcrtLister(names map[string]string) *mockMcrtLister {
 }
 
 func (m mockMcrtLister) Get(name string) (*mcrtv1alpha1.ManagedCertificate, error) {
-	return nil, fmt.Errorf("Get() not implemented")
+	return nil, fmt.Errorf("get() not implemented")
 }
 
 func (m mockMcrtLister) List(selector labels.Selector) ([]*mcrtv1alpha1.ManagedCertificate, error) {

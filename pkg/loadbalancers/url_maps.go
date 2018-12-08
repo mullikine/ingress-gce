@@ -51,7 +51,7 @@ func (l *L7) ensureComputeURLMap() error {
 	if currentMap == nil {
 		glog.V(3).Infof("Creating URLMap %q", expectedMap.Name)
 		if err := l.cloud.CreateUrlMap(expectedMap); err != nil {
-			return fmt.Errorf("CreateUrlMap: %v", err)
+			return fmt.Errorf("createUrlMap: %v", err)
 		}
 		l.um = expectedMap
 		return nil
@@ -66,7 +66,7 @@ func (l *L7) ensureComputeURLMap() error {
 	glog.V(3).Infof("Updating URLMap for %q", l.Name)
 	expectedMap.Fingerprint = currentMap.Fingerprint
 	if err := l.cloud.UpdateUrlMap(expectedMap); err != nil {
-		return fmt.Errorf("UpdateURLMap: %v", err)
+		return fmt.Errorf("updateURLMap: %v", err)
 	}
 
 	l.um = expectedMap

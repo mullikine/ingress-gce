@@ -270,7 +270,7 @@ func (c *PortRanges) Set(value string) error {
 	if !c.isSet {
 		c.isSet = true
 	} else {
-		return fmt.Errorf("NodePort Ranges have already been set")
+		return fmt.Errorf("nodePort Ranges have already been set")
 	}
 
 	c.ports = strings.Split(value, ",")
